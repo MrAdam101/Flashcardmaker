@@ -3,28 +3,20 @@ import random
 
 st.set_page_config(page_title="Flashcard Generator", layout="wide")
 
-# --------------------------------
 # TITLE
-# --------------------------------
 st.title("Flashcard Generator")
 
-# --------------------------------
 # INPUT BOX
-# --------------------------------
 word_input = st.text_area(
     "Enter words (one word per line)",
     height=150,
     placeholder="Bread\nWater"
 )
 
-# --------------------------------
 # GENERATE BUTTON
-# --------------------------------
 generate = st.button("Generate")
 
-# --------------------------------
 # COLORS
-# --------------------------------
 colors = [
     "#ff7a00",
     "#168ed4",
@@ -36,9 +28,7 @@ colors = [
     "#00cec9",
 ]
 
-# --------------------------------
 # WORD LIST
-# --------------------------------
 words = []
 
 if word_input.strip():
@@ -48,17 +38,13 @@ if word_input.strip():
         if word.strip()
     ]
 
-# --------------------------------
-# RANDOM UNIQUE COLORS
-# --------------------------------
+# RANDOM COLORS
 if generate and len(words) > 0:
     card_colors = random.sample(colors, len(words))
 else:
     card_colors = colors[:len(words)]
 
-# --------------------------------
 # CSS
-# --------------------------------
 st.markdown("""
 <style>
 
@@ -79,10 +65,8 @@ st.markdown("""
 
 .flash-card {
     height: 620px;
-
     border: 8px solid;
     border-radius: 35px;
-
     background: white;
     box-sizing: border-box;
 
@@ -93,17 +77,15 @@ st.markdown("""
     font-size: 55px;
     font-weight: bold;
     font-family: Arial;
-
     color: #222;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# --------------------------------
 # SHOW 2 CARDS PER PAGE
-# --------------------------------
 for i in range(0, len(words), 2):
+
     html = '<div class="a4-page">'
     html += '<div class="card-grid">'
 
@@ -111,6 +93,7 @@ for i in range(0, len(words), 2):
     page_colors = card_colors[i:i + 2]
 
     for word, color in zip(page_words, page_colors):
+
         html += f"""
         <div class="flash-card" style="border-color:{color};">
             {word}
