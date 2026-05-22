@@ -119,6 +119,6 @@ for i in range(0, len(words), 2):
         </div>
         """
 
-    html += "</div></div>"
+  html += "</div></div>"
 
-    st.markdown(html, unsafe_allow_html=True)
+st.markdown(html, unsafe_allow_html=True)
