@@ -3,20 +3,16 @@ import random
 
 st.set_page_config(page_title="Flashcard Generator", layout="wide")
 
-# TITLE
 st.title("Flashcard Generator")
 
-# INPUT BOX
 word_input = st.text_area(
     "Enter words (one word per line)",
     height=150,
-    placeholder="Bread\nWater"
+    placeholder="bread\nwater\ndog\ncat"
 )
 
-# GENERATE BUTTON
 generate = st.button("Generate")
 
-# COLORS
 colors = [
     "#ff7a00",
     "#168ed4",
@@ -28,26 +24,18 @@ colors = [
     "#00cec9",
 ]
 
-# WORD LIST
 words = []
 
 if word_input.strip():
-    words = [
-        word.strip()
-        for word in word_input.split("\n")
-        if word.strip()
-    ]
+    words = [word.strip() for word in word_input.split("\n") if word.strip()]
 
-# RANDOM COLORS
-if generate and len(words) > 0:
+if generate and words:
     card_colors = random.sample(colors, len(words))
 else:
     card_colors = colors[:len(words)]
 
-# CSS
 st.markdown("""
 <style>
-
 .a4-page {
     width: 1123px;
     height: 794px;
@@ -59,7 +47,7 @@ st.markdown("""
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
@@ -69,37 +57,41 @@ st.markdown("""
     border-radius: 35px;
     background: white;
     box-sizing: border-box;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 55px;
     font-weight: bold;
     font-family: Arial;
     color: #222;
 }
-
 </style>
 """, unsafe_allow_html=True)
 
-# SHOW 2 CARDS PER PAGE
 for i in range(0, len(words), 2):
-
-    html = '<div class="a4-page">'
-    html += '<div class="card-grid">'
-
     page_words = words[i:i + 2]
     page_colors = card_colors[i:i + 2]
 
-  for word, color in zip(page_words, page_colors):
+    cards_html = ""
 
-    html += (
-        f'<div class="flash-card" style="border-color:{color};">'
-        f'{word}'
-        f'</div>'
+    for index in range(len(page_words)):
+        word = page_words[index]
+        color = page_colors[index]
+
+        cards_html += (
+            '<div class="flash-card" style="border-color:'
+            + color
+            + ';">'
+            + word
+            + '</div>'
+        )
+
+    page_html = (
+        '<div class="a4-page">'
+        '<div class="card-grid">'
+        + cards_html +
+        '</div>'
+        '</div>'
     )
 
-    html += "</div></div>"
-
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(page_html, unsafe_allow_html=True)
