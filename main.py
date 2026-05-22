@@ -92,13 +92,13 @@ for i in range(0, len(words), 2):
     page_words = words[i:i + 2]
     page_colors = card_colors[i:i + 2]
 
-    for word, color in zip(page_words, page_colors):
+  for word, color in zip(page_words, page_colors):
 
-        html += f"""
-        <div class="flash-card" style="border-color:{color};">
-            {word}
-        </div>
-        """
+    html += (
+        f'<div class="flash-card" style="border-color:{color};">'
+        f'{word}'
+        f'</div>'
+    )
 
     html += "</div></div>"
 
