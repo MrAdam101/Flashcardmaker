@@ -101,7 +101,10 @@ for i in range(0, len(words), 2):
             '<div class="flash-card" style="border-color:'
             + color
             + ';">'
+            + '<div class="image-area">Image</div>'
+            + '<div class="word-area">'
             + word
+            + '</div>'
             + '</div>'
         )
 
