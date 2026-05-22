@@ -78,11 +78,12 @@ st.markdown("""
 .word-area {
     width: 100%;
     text-align: center;
-    font-size: 55px;
-    font-weight: bold;
-    font-family: Arial;
+    font-size: 75px;
+    font-weight: 900;
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
     color: #222;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
 }
 </style>
 """, unsafe_allow_html=True)
