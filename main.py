@@ -104,21 +104,19 @@ st.markdown("""
 # SHOW 2 CARDS PER PAGE
 # --------------------------------
 for i in range(0, len(words), 2):
-
     html = '<div class="a4-page">'
     html += '<div class="card-grid">'
 
-    page_words = words[i:i+2]
-    page_colors = card_colors[i:i+2]
+    page_words = words[i:i + 2]
+    page_colors = card_colors[i:i + 2]
 
     for word, color in zip(page_words, page_colors):
-
         html += f"""
         <div class="flash-card" style="border-color:{color};">
             {word}
         </div>
         """
 
-  html += "</div></div>"
+    html += "</div></div>"
 
-st.markdown(html, unsafe_allow_html=True)
+    st.markdown(html, unsafe_allow_html=True)
