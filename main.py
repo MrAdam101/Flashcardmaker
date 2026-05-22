@@ -57,13 +57,32 @@ st.markdown("""
     border-radius: 35px;
     background: white;
     box-sizing: border-box;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-area {
+    width: 100%;
+    height: 470px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 80px;
+    color: #ddd;
+}
+
+.word-area {
+    width: 100%;
+    text-align: center;
     font-size: 55px;
     font-weight: bold;
     font-family: Arial;
     color: #222;
+    padding-bottom: 10px;
 }
 </style>
 """, unsafe_allow_html=True)
