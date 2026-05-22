@@ -123,15 +123,18 @@ for i in range(0, len(words), 2):
         color = page_colors[index]
 
         cards_html += (
-            '<div class="flash-card" style="border-color:'
-            + color
-            + ';">'
-            + '<div class="image-area">Image</div>'
-            + '<div class="word-area">'
-            + word
-            + '</div>'
-            + '</div>'
-        )
+    '<div class="flash-card" style="border-color:'
+    + color
+    + ';">'
+    + '<div class="image-area">'
+    + f'<img src="data:image/png;base64,{generate_image(word)}" width="100%">'
+    + '</div>'
+    + '<div class="word-area">'
+    + word
+    + '</div>'
+    + '</div>'
+)
+        
 
     page_html = (
         '<div class="a4-page">'
