@@ -1,7 +1,10 @@
 import streamlit as st
 import random
+from openai import OpenAI
+import base64
 
 st.set_page_config(page_title="Flashcard Generator", layout="wide")
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.title("Flashcard Generator")
 
@@ -23,6 +26,27 @@ colors = [
     "#e74c3c",
     "#00cec9",
 ]
+
+def generate_image(word):
+
+    prompt = f"""
+    Cute cartoon image of a {word} for 5 year old ESL students.
+    Bright colors.
+    White background.
+    Simple.
+    Friendly.
+    Educational flashcard style.
+    """
+
+    result = client.images.generate(
+        model="gpt-image-1",
+        prompt=prompt,
+        size="1024x1024"
+    )
+
+    image_base64 = result.data[0].b64_json
+
+    return image_base64
 
 words = []
 
