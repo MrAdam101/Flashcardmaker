@@ -78,7 +78,7 @@ st.markdown("""
 .word-area {
     width: 100%;
     text-align: center;
-    font-size: 150px;
+    font-size: 100px;
     font-weight: 900;
     font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
     color: #222;
