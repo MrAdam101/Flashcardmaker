@@ -113,31 +113,32 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 for i in range(0, len(words), 2):
+
     page_words = words[i:i + 2]
     page_colors = card_colors[i:i + 2]
 
     cards_html = ""
 
-for index in range(len(page_words)):
+    for index in range(len(page_words)):
 
-    word = page_words[index]
-    color = page_colors[index]
+        word = page_words[index]
+        color = page_colors[index]
 
-cards_html += (
-        '<div class="flash-card" style="border-color:'
-        + color
-        + ';">'
+        cards_html += (
+            '<div class="flash-card" style="border-color:'
+            + color
+            + ';">'
 
-        + '<div class="image-area">'
-        + f'<img src="data:image/png;base64,{generate_image(word)}" width="100%">'
-        + '</div>'
+            + '<div class="image-area">'
+            + f'<img src="data:image/png;base64,{generate_image(word)}" width="100%">'
+            + '</div>'
 
-        + '<div class="word-area">'
-        + word
-        + '</div>'
+            + '<div class="word-area">'
+            + word
+            + '</div>'
 
-        + '</div>'
-    )
+            + '</div>'
+        )
 
     page_html = (
         '<div class="a4-page">'
