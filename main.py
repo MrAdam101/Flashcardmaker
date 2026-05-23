@@ -29,26 +29,28 @@ colors = [
 
 def generate_image(word):
 
-   prompt = f"""
-Cute cartoon {word} for a 5 year old ESL student.
+def generate_image(word):
 
-Single object only.
+    prompt = f"""
+    Cute cartoon {word} for a 5 year old ESL student.
 
-Transparent background.
+    Single object only.
 
-No text.
-No letters.
-No words.
-No flashcard.
-No border.
-No frame.
-No background scene.
+    Transparent background.
 
-Centered object.
-Bright colors.
-Cute kindergarten style.
-Simple clean vector cartoon.
-"""
+    No text.
+    No letters.
+    No words.
+    No flashcard.
+    No border.
+    No frame.
+    No background scene.
+
+    Centered object.
+    Bright colors.
+    Cute kindergarten style.
+    Simple clean vector cartoon.
+    """
 
     result = client.images.generate(
         model="gpt-image-1",
@@ -58,7 +60,8 @@ Simple clean vector cartoon.
 
     image_base64 = result.data[0].b64_json
 
-    return image_base64
+    return image_base64  
+
 
 words = []
 
