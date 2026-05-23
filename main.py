@@ -118,7 +118,7 @@ for i in range(0, len(words), 2):
 
     cards_html = ""
 
-    for index in range(len(page_words)):
+for index in range(len(page_words)):
 
     word = page_words[index]
     color = page_colors[index]
