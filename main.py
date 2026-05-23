@@ -111,7 +111,6 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
 for i in range(0, len(words), 2):
 
     page_words = words[i:i + 2]
