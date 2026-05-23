@@ -125,12 +125,15 @@ cards_html += (
     '<div class="flash-card" style="border-color:'
     + color
     + ';">'
+
     + '<div class="image-area">'
     + f'<img src="data:image/png;base64,{generate_image(word)}" width="100%">'
     + '</div>'
+
     + '<div class="word-area">'
     + word
     + '</div>'
+
     + '</div>'
 )
       
