@@ -29,8 +29,6 @@ colors = [
 
 def generate_image(word):
 
-def generate_image(word):
-
     prompt = f"""
     Cute cartoon {word} for a 5 year old ESL student.
 
