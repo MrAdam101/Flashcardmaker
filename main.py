@@ -123,7 +123,7 @@ for index in range(len(page_words)):
     word = page_words[index]
     color = page_colors[index]
 
-    cards_html += (
+cards_html += (
         '<div class="flash-card" style="border-color:'
         + color
         + ';">'
