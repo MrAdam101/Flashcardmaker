@@ -258,17 +258,16 @@ if st.session_state.get("cards"):
         for card in cards[start:start + 2]:
             safe_word = html.escape(card["word"])
 
-            cards_html += f"""
-                <div class="flash-card"
-                     style="border-color:{card['color']};">
-                    <div class="image-area">
-                        <img
-                            src="data:image/png;base64,{card['image']}"
-                            alt="{safe_word}">
-                    </div>
-                    <div class="word-area">{safe_word}</div>
-                </div>
-            """
+                        cards_html += (
+                f'<div class="flash-card" '
+                f'style="border-color:{card["color"]};">'
+                '<div class="image-area">'
+                f'<img src="data:image/png;base64,{card["image"]}" '
+                f'alt="{safe_word}">'
+                '</div>'
+                f'<div class="word-area">{safe_word}</div>'
+                '</div>'
+            )
 
         st.markdown(
             '<div class="a4-page"><div class="card-grid">'
