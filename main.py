@@ -29,12 +29,25 @@ colors = [
 
 def generate_image(word):
 
-    prompt = f"""
-    Cute cartoon {word} for a 5 year old ESL student.
+   prompt = f"""
+    Create a cute cartoon illustration of "{word}"
+    for a 5-year-old ESL student.
 
-    Single object only.
+    Give the illustration a clear Christmas theme while
+    keeping "{word}" immediately recognisable.
 
+    Add simple festive details appropriate to the subject,
+    such as a Santa hat, a red Christmas bow, or red and
+    green decorations attached to the subject.
+
+    Preserve the subject's main shape and defining features.
+    Do not replace it with a different Christmas object.
+    Avoid decorations that hide or confuse its meaning.
+
+    One main subject only.
+    No separate props.
     Transparent background.
+    No background scene.
 
     No text.
     No letters.
@@ -42,12 +55,12 @@ def generate_image(word):
     No flashcard.
     No border.
     No frame.
-    No background scene.
 
-    Centered object.
-    Bright colors.
+    Centered composition.
+    Entire subject visible.
+    Bright festive colours.
     Cute kindergarten style.
-    Simple clean vector cartoon.
+    Simple, clean vector cartoon.
     """
 
     result = client.images.generate(
