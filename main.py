@@ -190,9 +190,9 @@ st.markdown("""
     width: 100%;
     text-align: center;
     font-family: 'Fredoka', sans-serif;
-    font-size: 100px;
+    font-size: 130px;
     font-weight: 700;
-    color: #b71924;
+    color: #000000;
     line-height: 1.1;
     padding-bottom: 20px;
     overflow-wrap: anywhere;
