@@ -258,7 +258,7 @@ if st.session_state.get("cards"):
         for card in cards[start:start + 2]:
             safe_word = html.escape(card["word"])
 
-                        cards_html += (
+            cards_html += (
                 f'<div class="flash-card" '
                 f'style="border-color:{card["color"]};">'
                 '<div class="image-area">'
@@ -273,5 +273,7 @@ if st.session_state.get("cards"):
             '<div class="a4-page"><div class="card-grid">'
             + cards_html
             + '</div></div>',
+            unsafe_allow_html=True
+        )
             unsafe_allow_html=True
         )
