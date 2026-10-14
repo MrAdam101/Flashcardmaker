@@ -147,6 +147,7 @@ def create_pdf(cards):
 
 
 st.markdown("""
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
 <style>
 .a4-page {
     width: 100%;
@@ -188,10 +189,11 @@ st.markdown("""
 .word-area {
     width: 100%;
     text-align: center;
-    font-size: clamp(24px, 5vw, 70px);
-    font-weight: 900;
-    font-family: 'Mountains of Christmas', cursive;
-    color: #222;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: #b71924;
+    line-height: 1.1;
     padding-bottom: 20px;
     overflow-wrap: anywhere;
 }
