@@ -123,7 +123,7 @@ def create_pdf(cards):
             )
 
             # Reduce the font size for longer words.
-            font_size = 52
+            font_size = 80
             while (
                 pdf.stringWidth(
                     card["word"], "Helvetica-Bold", font_size
@@ -190,7 +190,7 @@ st.markdown("""
     text-align: center;
     font-size: clamp(24px, 5vw, 70px);
     font-weight: 900;
-    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    font-family: 'Mountains of Christmas', cursive;
     color: #222;
     padding-bottom: 20px;
     overflow-wrap: anywhere;
