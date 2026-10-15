@@ -100,7 +100,7 @@ def create_pdf(cards):
             y = margin
 
             pdf.setStrokeColor(HexColor(card["color"]))
-            pdf.setLineWidth(5)
+            pdf.setLineWidth(10)
             pdf.roundRect(
                 x, y, card_width, card_height,
                 radius=20,
@@ -126,7 +126,7 @@ def create_pdf(cards):
             font_size = 80
             while (
                 pdf.stringWidth(
-                    card["word"], "Helvetica-Bold", font_size
+                    card["word"], "Comic Sans MS", font_size
                 ) > card_width - 36
                 and font_size > 8
             ):
